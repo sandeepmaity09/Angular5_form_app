@@ -1,5 +1,5 @@
 <div  class="jumbotron">
-<form [formGroup]="myform" novalidate>
+<form [formGroup]="myform" (ngSubmit)="onSubmit()" novalidate>
 	<fieldset formGroupName="name">
 
 		<div class="form-group" [ngClass]='{
@@ -108,6 +108,9 @@
 	</div>
 
 	<pre>{{ myform.value | json }}</pre>
+	<pre>{{ myform.valid }}</pre>
+
+	<button type="submit" class="btn btn-primary" [disabled]="!myform.valid"> Submit Form </button>
 
 </form>
 </div>

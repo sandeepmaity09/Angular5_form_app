@@ -73,4 +73,9 @@ export class LoginComponent implements OnInit {
 
 	public langs = this.data.optionsForLanguage();
 
+	public onSubmit(){
+		console.log('onSubmit Called');
+		this.myform.reset();
+	}
+
 }
